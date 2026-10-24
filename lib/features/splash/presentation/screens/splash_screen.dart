@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 import '../../../../app/router/route_names.dart';
 import '../../../../app/theme/app_colors.dart';
+import '../../../../core/storage/app_preferences.dart';
 import '../widgets/splash_bubbles.dart';
 import '../widgets/splash_loading.dart';
 import '../widgets/splash_logo.dart';
@@ -85,6 +87,28 @@ class _SplashScreenState extends State<SplashScreen>
     );
 
     _controller.forward();
+
+    // Navigate based on whether setup is already complete
+    Future.delayed(const Duration(seconds: 3), () async {
+      if (!mounted) return;
+
+      final prefs = await SharedPreferences.getInstance();
+      final appPreferences = AppPreferences(prefs);
+
+      if (!mounted) return;
+
+      if (appPreferences.isSetupComplete) {
+        Navigator.pushReplacementNamed(
+          context,
+          RouteNames.onboarding,
+        );
+      } else {
+        Navigator.pushReplacementNamed(
+          context,
+          RouteNames.appSetup,
+        );
+      }
+    });
   }
 
   @override
@@ -114,7 +138,7 @@ class _SplashScreenState extends State<SplashScreen>
         child: Stack(
           fit: StackFit.expand,
           children: [
-            // Static Background Bubbles
+            // Static Background이브
             Positioned.fill(
               child: IgnorePointer(
                 child: SplashBubbles(),

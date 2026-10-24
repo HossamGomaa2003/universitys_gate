@@ -1,0 +1,16 @@
+{
+  "app_name": "بوابة الجامعة",
+  "welcome": "مرحباً",
+  "setup_title": "خصص تجربتك",
+  "setup_subtitle": "اختر اللغة والمظهر المناسبين لك",
+  "language_title": "لغة التطبيق",
+  "language_english": "الإنجليزية",
+  "language_english_subtitle": "اللغة الإنجليزية",
+  "language_arabic": "العربية",
+  "language_arabic_subtitle": "اللغة العربية",
+  "theme_title": "مظهر التطبيق",
+  "theme_light": "فاتح",
+  "theme_dark": "داكن",
+  "theme_system": "تلقائي",
+  "continue": "متابعة"
+}

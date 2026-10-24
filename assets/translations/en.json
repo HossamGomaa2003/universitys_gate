@@ -1,0 +1,16 @@
+{
+  "app_name": "University's Gate",
+  "welcome": "Welcome",
+  "setup_title": "Customize Your Experience",
+  "setup_subtitle": "Choose your preferred language and appearance",
+  "language_title": "App Language",
+  "language_english": "English",
+  "language_english_subtitle": "English language",
+  "language_arabic": "Arabic",
+  "language_arabic_subtitle": "Arabic language",
+  "theme_title": "App Appearance",
+  "theme_light": "Light",
+  "theme_dark": "Dark",
+  "theme_system": "System",
+  "continue": "Continue"
+}
