@@ -1,8 +1,8 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:universitys_gate/app/theme/app_colors.dart';
 
-import '../../../../app/theme/app_colors.dart';
 
 class SetupHeader extends StatelessWidget {
   const SetupHeader({super.key});

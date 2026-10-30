@@ -3,13 +3,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import '../../../../app/router/route_names.dart';
-import '../../../../core/storage/app_preferences.dart';
-import '../../logic/app_setup_cubit.dart';
-import '../../logic/app_setup_state.dart';
-import '../widgets/language_selector.dart';
-import '../widgets/setup_header.dart';
-import '../widgets/theme_selector.dart';
+import 'package:universitys_gate/app/router/route_names.dart';
+import 'package:universitys_gate/core/storage/app_preferences.dart';
+import 'package:universitys_gate/features/app_setup/logic/app_setup_cubit.dart';
+import 'package:universitys_gate/features/app_setup/logic/app_setup_state.dart';
+import 'package:universitys_gate/features/app_setup/presentation/widgets/language_selector.dart';
+import 'package:universitys_gate/features/app_setup/presentation/widgets/setup_header.dart';
+import 'package:universitys_gate/features/app_setup/presentation/widgets/theme_selector.dart';
+
 
 class AppSetupScreen extends StatefulWidget {
   static const String routeName = RouteNames.appSetup;

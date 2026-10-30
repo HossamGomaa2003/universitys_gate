@@ -22,6 +22,9 @@ class AppButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final bool isDark = Theme.of(context).brightness == Brightness.dark;
+    final Color primaryColor = isDark ? DarkAppColors.primary : AppColors.primary;
+
     if (isOutlined) {
       return SizedBox(
         width: double.infinity,
@@ -29,9 +32,9 @@ class AppButton extends StatelessWidget {
         child: OutlinedButton(
           onPressed: isLoading ? null : onPressed,
           style: OutlinedButton.styleFrom(
-            foregroundColor: AppColors.primary,
-            side: const BorderSide(
-              color: AppColors.primary,
+            foregroundColor: primaryColor,
+            side: BorderSide(
+              color: primaryColor,
               width: 1.5,
             ),
             shape: RoundedRectangleBorder(
@@ -40,7 +43,7 @@ class AppButton extends StatelessWidget {
               ),
             ),
           ),
-          child: _buildChild(),
+          child: _buildChild(primaryColor: primaryColor),
         ),
       );
     }
@@ -51,7 +54,7 @@ class AppButton extends StatelessWidget {
       child: ElevatedButton(
         onPressed: isLoading ? null : onPressed,
         style: ElevatedButton.styleFrom(
-          backgroundColor: AppColors.primary,
+          backgroundColor: primaryColor,
           foregroundColor: Colors.white,
           elevation: 0,
           shape: RoundedRectangleBorder(
@@ -60,19 +63,19 @@ class AppButton extends StatelessWidget {
             ),
           ),
         ),
-        child: _buildChild(),
+        child: _buildChild(primaryColor: Colors.white),
       ),
     );
   }
 
-  Widget _buildChild() {
+  Widget _buildChild({required Color primaryColor}) {
     if (isLoading) {
-      return const SizedBox(
+      return SizedBox(
         width: 22,
         height: 22,
         child: CircularProgressIndicator(
           strokeWidth: 2.5,
-          color: Colors.white,
+          color: primaryColor,
         ),
       );
     }

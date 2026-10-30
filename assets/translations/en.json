@@ -12,5 +12,17 @@
   "theme_light": "Light",
   "theme_dark": "Dark",
   "theme_system": "System",
-  "continue": "Continue"
+  "continue": "Continue",
+  "onboarding": {
+    "title_1": "Your University Journey Starts Here",
+    "description_1": "Discover the best universities, explore your options and take the first step towards your future.",
+    "title_2": "Easy & Simple Application Process",
+    "description_2": "Complete your application in a few simple steps, with clear guidance at every stage.",
+    "title_3": "Build Your Bright Future",
+    "description_3": "Get closer to your dreams and join the university that fits your goals.",
+    "skip": "Skip",
+    "next": "Next",
+    "back": "Back",
+    "get_started": "Get Started"
+  }
 }

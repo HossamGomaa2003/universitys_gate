@@ -11,29 +11,37 @@ abstract class AppRouter {
   static Map<String, WidgetBuilder> get routes => {
         RouteNames.splash: (context) => const SplashScreen(),
         RouteNames.appSetup: (context) => const AppSetupScreen(),
-        RouteNames.onboarding: (context) => const OnboardingScreen(),
+        RouteNames.onboarding: (context) => OnboardingScreen(
+              onFinished: () {
+                Navigator.pushReplacementNamed(context, RouteNames.splash);
+              },
+            ),
       };
 
   static Route<dynamic>? onGenerateRoute(RouteSettings settings) {
     switch (settings.name) {
       case RouteNames.splash:
         return MaterialPageRoute(
-          builder: (_) => const SplashScreen(),
+          builder: (context) => const SplashScreen(),
           settings: settings,
         );
       case RouteNames.appSetup:
         return MaterialPageRoute(
-          builder: (_) => const AppSetupScreen(),
+          builder: (context) => const AppSetupScreen(),
           settings: settings,
         );
       case RouteNames.onboarding:
         return MaterialPageRoute(
-          builder: (_) => const OnboardingScreen(),
+          builder: (context) => OnboardingScreen(
+            onFinished: () {
+              Navigator.pushReplacementNamed(context, RouteNames.splash);
+            },
+          ),
           settings: settings,
         );
       default:
         return MaterialPageRoute(
-          builder: (_) => const Scaffold(
+          builder: (context) => const Scaffold(
             body: Center(
               child: Text('Page not found'),
             ),

@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:universitys_gate/core/storage/app_preferences.dart';
 
-import '../../../core/storage/app_preferences.dart';
+
 import 'app_setup_state.dart';
 
 class AppSetupCubit extends Cubit<AppSetupState> {
