@@ -10,6 +10,7 @@ class AppButton extends StatelessWidget {
   final bool isLoading;
   final bool isOutlined;
   final IconData? icon;
+  final IconData? suffixIcon;
 
   const AppButton({
     super.key,
@@ -18,6 +19,7 @@ class AppButton extends StatelessWidget {
     this.isLoading = false,
     this.isOutlined = false,
     this.icon,
+    this.suffixIcon,
   });
 
   @override
@@ -77,6 +79,28 @@ class AppButton extends StatelessWidget {
           strokeWidth: 2.5,
           color: primaryColor,
         ),
+      );
+    }
+
+    if (suffixIcon != null) {
+      return Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Text(
+            text,
+            style: const TextStyle(
+              fontSize: 16,
+              fontWeight: FontWeight.w600,
+            ),
+          ),
+          const SizedBox(
+            width: AppDimensions.spacing8,
+          ),
+          Icon(
+            suffixIcon,
+            size: AppDimensions.iconMedium,
+          ),
+        ],
       );
     }
 

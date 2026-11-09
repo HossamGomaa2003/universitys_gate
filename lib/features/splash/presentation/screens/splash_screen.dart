@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:shared_preferences/shared_preferences.dart';
-
 import '../../../../app/router/route_names.dart';
 import '../../../../app/theme/app_colors.dart';
+import '../../../../core/di/injection.dart';
 import '../../../../core/storage/app_preferences.dart';
 import '../widgets/splash_bubbles.dart';
 import '../widgets/splash_loading.dart';
@@ -92,15 +91,12 @@ class _SplashScreenState extends State<SplashScreen>
     Future.delayed(const Duration(seconds: 3), () async {
       if (!mounted) return;
 
-      final prefs = await SharedPreferences.getInstance();
-      final appPreferences = AppPreferences(prefs);
-
-      if (!mounted) return;
+      final appPreferences = getIt<AppPreferences>();
 
       if (appPreferences.isSetupComplete) {
         Navigator.pushReplacementNamed(
           context,
-          RouteNames.onboarding,
+          RouteNames.login,
         );
       } else {
         Navigator.pushReplacementNamed(

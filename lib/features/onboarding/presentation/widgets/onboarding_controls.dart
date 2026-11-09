@@ -12,12 +12,15 @@ class OnboardingControls {
     final bool isDark = context != null && Theme.of(context).brightness == Brightness.dark;
     final Color primaryColor = isDark ? DarkAppColors.primary : AppColors.primary;
 
-    return Text(
-      'onboarding.skip'.tr(),
-      style: (isDark ? AppTextStyles.darkButton : AppTextStyles.lightButton).copyWith(
-        color: primaryColor,
-        fontSize: 18.sp,
-        fontWeight: FontWeight.w700,
+    return FittedBox(
+      fit: BoxFit.scaleDown,
+      child: Text(
+        'onboarding.skip'.tr(),
+        style: (isDark ? AppTextStyles.darkButton : AppTextStyles.lightButton).copyWith(
+          color: primaryColor,
+          fontSize: 15.sp,
+          fontWeight: FontWeight.w700,
+        ),
       ),
     );
   }
@@ -27,24 +30,27 @@ class OnboardingControls {
     final bool isDark = Theme.of(context).brightness == Brightness.dark;
     final Color primaryColor = isDark ? DarkAppColors.primary : AppColors.primary;
 
-    return Row(
-      mainAxisSize: MainAxisSize.min,
-      children: [
-        Icon(
-          isRtl ? Icons.arrow_forward_rounded : Icons.arrow_back_rounded,
-          size: 20.r,
-          color: primaryColor,
-        ),
-        SizedBox(width: 4.w),
-        Text(
-          'onboarding.back'.tr(),
-          style: (isDark ? AppTextStyles.darkButton : AppTextStyles.lightButton).copyWith(
+    return FittedBox(
+      fit: BoxFit.scaleDown,
+      child: Row(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          Icon(
+            isRtl ? Icons.arrow_forward_rounded : Icons.arrow_back_rounded,
+            size: 18.r,
             color: primaryColor,
-            fontSize: 18.sp,
-            fontWeight: FontWeight.w700,
           ),
-        ),
-      ],
+          SizedBox(width: 4.w),
+          Text(
+            'onboarding.back'.tr(),
+            style: (isDark ? AppTextStyles.darkButton : AppTextStyles.lightButton).copyWith(
+              color: primaryColor,
+              fontSize: 15.sp,
+              fontWeight: FontWeight.w700,
+            ),
+          ),
+        ],
+      ),
     );
   }
 
@@ -64,30 +70,33 @@ class OnboardingControls {
     final bool isDark = Theme.of(context).brightness == Brightness.dark;
     final TextStyle buttonStyle = isDark ? AppTextStyles.darkButton : AppTextStyles.lightButton;
 
-    return Row(
-      mainAxisSize: MainAxisSize.min,
-      children: [
-        Text(
-          text.tr(),
-          style: buttonStyle.copyWith(
-            fontSize: 18.sp,
-            fontWeight: FontWeight.w700,
+    return FittedBox(
+      fit: BoxFit.scaleDown,
+      child: Row(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          Text(
+            text.tr(),
+            style: buttonStyle.copyWith(
+              fontSize: 15.sp,
+              fontWeight: FontWeight.w700,
+            ),
           ),
-        ),
-        SizedBox(width: 6.w),
-        Icon(
-          isRtl ? Icons.arrow_back_rounded : Icons.arrow_forward_rounded,
-          size: 20.r,
-          color: Colors.white,
-        ),
-      ],
+          SizedBox(width: 4.w),
+          Icon(
+            isRtl ? Icons.arrow_back_rounded : Icons.arrow_forward_rounded,
+            size: 18.r,
+            color: Colors.white,
+          ),
+        ],
+      ),
     );
   }
 
   static ButtonStyle backStyle([BuildContext? context]) {
     return ButtonStyle(
       padding: WidgetStateProperty.all(
-        EdgeInsets.symmetric(horizontal: 16.w, vertical: 12.h),
+        EdgeInsets.symmetric(horizontal: 10.w, vertical: 8.h),
       ),
     );
   }
@@ -99,7 +108,7 @@ class OnboardingControls {
     return ButtonStyle(
       backgroundColor: WidgetStateProperty.all(primaryColor),
       padding: WidgetStateProperty.all(
-        EdgeInsets.symmetric(horizontal: 20.w, vertical: 14.h),
+        EdgeInsets.symmetric(horizontal: 14.w, vertical: 10.h),
       ),
       shape: WidgetStateProperty.all(
         RoundedRectangleBorder(
@@ -116,11 +125,11 @@ class OnboardingControls {
     return ButtonStyle(
       backgroundColor: WidgetStateProperty.all(primaryColor),
       padding: WidgetStateProperty.all(
-        EdgeInsets.symmetric(horizontal: 20.w, vertical: 14.h),
+        EdgeInsets.symmetric(horizontal: 14.w, vertical: 10.h),
       ),
       shape: WidgetStateProperty.all(
         RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(AppRadius.radius4),
+          borderRadius: BorderRadius.circular(AppRadius.button),
         ),
       ),
     );
@@ -137,7 +146,7 @@ class OnboardingControls {
       activeColor: primaryColor,
       spacing: EdgeInsets.symmetric(horizontal: 4.w),
       activeShape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(AppRadius.radius4),
+        borderRadius: BorderRadius.circular(AppRadius.radius8),
       ),
     );
   }

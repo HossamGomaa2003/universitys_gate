@@ -1,19 +1,21 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:shared_preferences/shared_preferences.dart';
+import 'package:injectable/injectable.dart';
+import 'package:universitys_gate/core/storage/app_preferences.dart';
 
 import 'onboarding_state.dart';
 
+@injectable
 class OnboardingCubit extends Cubit<OnboardingState> {
-  OnboardingCubit() : super(const OnboardingState());
+  final AppPreferences _preferences;
+
+  OnboardingCubit(this._preferences) : super(const OnboardingState());
 
   void changePage(int index) {
     emit(state.copyWith(currentPage: index));
   }
 
   Future<void> completeOnboarding() async {
-    final prefs = await SharedPreferences.getInstance();
-
-    await prefs.setBool('onboarding_completed', true);
+    await _preferences.setSetupComplete(true);
 
     emit(state.copyWith(isCompleted: true));
   }

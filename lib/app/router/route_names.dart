@@ -11,4 +11,7 @@ abstract class RouteNames {
 
   /// App Setup Screen
   static const String appSetup = '/app-setup';
+
+  /// Login Screen
+  static const String login = '/login';
 }

@@ -1,5 +1,7 @@
+import 'package:injectable/injectable.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
+@lazySingleton
 class AppPreferences {
   static const String _themeKey = 'theme_mode';
   static const String _languageKey = 'language_code';

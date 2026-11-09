@@ -2,12 +2,11 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 
 import 'app/router/app_router.dart';
 import 'app/router/route_names.dart';
 import 'app/theme/app_theme.dart';
-import 'core/storage/app_preferences.dart';
+import 'core/di/injection.dart';
 import 'features/app_setup/logic/app_setup_cubit.dart';
 import 'features/app_setup/logic/app_setup_state.dart';
 
@@ -18,10 +17,8 @@ Future<void> main() async {
   // Initialize Easy Localization
   await EasyLocalization.ensureInitialized();
 
-  // Initialize SharedPreferences and AppPreferences
-  final sharedPreferences = await SharedPreferences.getInstance();
-  final appPreferences = AppPreferences(sharedPreferences);
-  final appSetupCubit = AppSetupCubit(appPreferences);
+  // Configure Dependency Injection via Injectable & GetIt
+  await configureDependencies();
 
   // Run the application
   runApp(
@@ -32,8 +29,8 @@ Future<void> main() async {
       ],
       path: 'assets/translations',
       fallbackLocale: const Locale('en'),
-      child: BlocProvider.value(
-        value: appSetupCubit,
+      child: BlocProvider<AppSetupCubit>(
+        create: (context) => getIt<AppSetupCubit>(),
         child: const MyApp(),
       ),
     ),

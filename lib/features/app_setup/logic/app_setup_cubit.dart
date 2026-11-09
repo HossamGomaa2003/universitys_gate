@@ -1,21 +1,22 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:injectable/injectable.dart';
 import 'package:universitys_gate/core/storage/app_preferences.dart';
-
 
 import 'app_setup_state.dart';
 
+@injectable
 class AppSetupCubit extends Cubit<AppSetupState> {
   final AppPreferences _preferences;
 
   AppSetupCubit(this._preferences)
       : super(
-    AppSetupState(
-      themeMode: _readThemeMode(
-        _preferences.themeMode,
-      ),
-    ),
-  );
+          AppSetupState(
+            themeMode: _readThemeMode(
+              _preferences.themeMode,
+            ),
+          ),
+        );
 
   static ThemeMode _readThemeMode(String value) {
     switch (value) {

@@ -2,9 +2,7 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 import 'package:universitys_gate/app/router/route_names.dart';
-import 'package:universitys_gate/core/storage/app_preferences.dart';
 import 'package:universitys_gate/features/app_setup/logic/app_setup_cubit.dart';
 import 'package:universitys_gate/features/app_setup/logic/app_setup_state.dart';
 import 'package:universitys_gate/features/app_setup/presentation/widgets/language_selector.dart';
@@ -105,16 +103,11 @@ class _AppSetupScreenState extends State<AppSetupScreen> {
                       width: double.infinity,
                       height: 56.h,
                       child: ElevatedButton(
-                        onPressed: () async {
-                          final prefs = await SharedPreferences.getInstance();
-                          await AppPreferences(prefs).setSetupComplete(true);
-
-                          if (context.mounted) {
-                            Navigator.pushReplacementNamed(
-                              context,
-                              RouteNames.onboarding,
-                            );
-                          }
+                        onPressed: () {
+                          Navigator.pushReplacementNamed(
+                            context,
+                            RouteNames.onboarding,
+                          );
                         },
                         style: ElevatedButton.styleFrom(
                           backgroundColor: colorScheme.primary,

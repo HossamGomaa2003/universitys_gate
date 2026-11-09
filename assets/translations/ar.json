@@ -24,5 +24,18 @@
     "next": "التالي",
     "back": "السابق",
     "get_started": "ابدأ الآن"
+  },
+  "auth": {
+    "login": "تسجيل الدخول",
+    "welcome_back": "مرحباً بعودتك",
+    "login_subtitle": "سجل الدخول لمتابعة رحلتك الجامعية",
+    "tagline": "رحلتك الجامعية\nتبدأ من هنا",
+    "email_or_phone": "البريد الإلكتروني أو رقم الهاتف",
+    "password": "كلمة المرور",
+    "remember_me": "تذكرني",
+    "forgot_password": "نسيت كلمة المرور؟",
+    "or": "أو",
+    "dont_have_account": "ليس لديك حساب؟ ",
+    "create_account": "إنشاء حساب جديد"
   }
 }

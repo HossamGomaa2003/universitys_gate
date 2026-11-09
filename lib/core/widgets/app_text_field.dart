@@ -45,6 +45,11 @@ class AppTextField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
+    final bool isDark = theme.brightness == Brightness.dark;
+
+    final Color iconColor = isDark ? DarkAppColors.textSecondary : AppColors.textSecondary;
+    final Color borderColor = isDark ? const Color(0xFF334155) : const Color(0xFFE2E8F0);
+    final Color primaryColor = isDark ? DarkAppColors.primary : AppColors.primary;
 
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
@@ -77,27 +82,31 @@ class AppTextField extends StatelessWidget {
 
           decoration: InputDecoration(
             hintText: hint,
+            hintStyle: TextStyle(
+              color: isDark ? const Color(0xFF64748B) : const Color(0xFF94A3B8),
+              fontSize: 14,
+            ),
             errorText: errorText,
 
             prefixIcon: prefixIcon != null
                 ? Icon(
-              prefixIcon,
-              color: AppColors.textSecondary,
-            )
+                    prefixIcon,
+                    color: iconColor,
+                  )
                 : null,
 
             suffixIcon: suffixIcon != null
                 ? IconButton(
-              onPressed: onSuffixIconPressed,
-              icon: Icon(
-                suffixIcon,
-                color: AppColors.textSecondary,
-              ),
-            )
+                    onPressed: onSuffixIconPressed,
+                    icon: Icon(
+                      suffixIcon,
+                      color: iconColor,
+                    ),
+                  )
                 : null,
 
             filled: true,
-            fillColor: theme.colorScheme.surface,
+            fillColor: isDark ? const Color(0xFF0F172A) : theme.colorScheme.surface,
 
             contentPadding: const EdgeInsets.symmetric(
               horizontal: AppDimensions.spacing16,
@@ -109,7 +118,7 @@ class AppTextField extends StatelessWidget {
                 AppRadius.textField,
               ),
               borderSide: BorderSide(
-                color: theme.dividerColor,
+                color: borderColor,
               ),
             ),
 
@@ -118,7 +127,7 @@ class AppTextField extends StatelessWidget {
                 AppRadius.textField,
               ),
               borderSide: BorderSide(
-                color: theme.dividerColor,
+                color: borderColor,
               ),
             ),
 
@@ -126,8 +135,8 @@ class AppTextField extends StatelessWidget {
               borderRadius: BorderRadius.circular(
                 AppRadius.textField,
               ),
-              borderSide: const BorderSide(
-                color: AppColors.primary,
+              borderSide: BorderSide(
+                color: primaryColor,
                 width: 2,
               ),
             ),

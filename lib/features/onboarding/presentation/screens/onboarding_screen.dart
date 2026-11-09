@@ -2,22 +2,26 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:introduction_screen/introduction_screen.dart';
+import 'package:universitys_gate/app/router/route_names.dart';
+import 'package:universitys_gate/core/di/injection.dart';
 import 'package:universitys_gate/features/onboarding/cubit/onboarding_cubit.dart';
 import 'package:universitys_gate/features/onboarding/presentation/widgets/onboarding_controls.dart';
 import 'package:universitys_gate/features/onboarding/presentation/widgets/onboarding_header.dart';
 import 'package:universitys_gate/features/onboarding/presentation/widgets/onboarding_page.dart';
 
-
-
 class OnboardingScreen extends StatelessWidget {
-  final VoidCallback onFinished;
+  final VoidCallback? onFinished;
 
-  const OnboardingScreen({super.key, required this.onFinished});
+  const OnboardingScreen({super.key, this.onFinished});
 
   Future<void> _finish(BuildContext context) async {
     await context.read<OnboardingCubit>().completeOnboarding();
     if (context.mounted) {
-      onFinished();
+      if (onFinished != null) {
+        onFinished!();
+      } else {
+        Navigator.pushReplacementNamed(context, RouteNames.login);
+      }
     }
   }
 
@@ -27,7 +31,7 @@ class OnboardingScreen extends StatelessWidget {
     return Scaffold(
       backgroundColor: scaffoldBg,
       body: BlocProvider(
-        create: (_) => OnboardingCubit(),
+        create: (_) => getIt<OnboardingCubit>(),
         child: Builder(
           builder: (context) {
             return IntroductionScreen(

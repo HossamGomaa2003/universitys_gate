@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../features/app_setup/presentation/screens/app_setup_screen.dart';
+import '../../features/authentication/presentation/screens/login_screen.dart';
 import '../../features/onboarding/presentation/screens/onboarding_screen.dart';
 import '../../features/splash/presentation/screens/splash_screen.dart';
 import 'route_names.dart';
@@ -13,9 +14,10 @@ abstract class AppRouter {
         RouteNames.appSetup: (context) => const AppSetupScreen(),
         RouteNames.onboarding: (context) => OnboardingScreen(
               onFinished: () {
-                Navigator.pushReplacementNamed(context, RouteNames.splash);
+                Navigator.pushReplacementNamed(context, RouteNames.login);
               },
             ),
+        RouteNames.login: (context) => const LoginScreen(),
       };
 
   static Route<dynamic>? onGenerateRoute(RouteSettings settings) {
@@ -34,11 +36,18 @@ abstract class AppRouter {
         return MaterialPageRoute(
           builder: (context) => OnboardingScreen(
             onFinished: () {
-              Navigator.pushReplacementNamed(context, RouteNames.splash);
+              Navigator.pushReplacementNamed(context, RouteNames.login);
             },
           ),
           settings: settings,
         );
+      case RouteNames.login:
+        return MaterialPageRoute(
+          builder: (context) => const LoginScreen(),
+          settings: settings,
+        );
+
+
       default:
         return MaterialPageRoute(
           builder: (context) => const Scaffold(
