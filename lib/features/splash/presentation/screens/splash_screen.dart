@@ -3,6 +3,7 @@ import '../../../../app/router/route_names.dart';
 import '../../../../app/theme/app_colors.dart';
 import '../../../../core/di/injection.dart';
 import '../../../../core/storage/app_preferences.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../widgets/splash_bubbles.dart';
 import '../widgets/splash_loading.dart';
 import '../widgets/splash_logo.dart';
@@ -157,7 +158,7 @@ class _SplashScreenState extends State<SplashScreen>
                       fadeAnimation: _logoFade,
                     ),
 
-                    SizedBox(height: 5),
+                    SizedBox(height: 5.h),
 
                     // App Name and Tagline
                     SplashTitle(
@@ -170,7 +171,7 @@ class _SplashScreenState extends State<SplashScreen>
                     // Loading Indicator
                     SplashLoading(),
 
-                    SizedBox(height: 40),
+                    SizedBox(height: 40.h),
                   ],
                 ),
               ),

@@ -9,6 +9,7 @@ class AppTextField extends StatelessWidget {
   final String? label;
   final String? hint;
   final String? errorText;
+  final FormFieldValidator<String>? validator;
 
   final TextInputType keyboardType;
   final TextInputAction textInputAction;
@@ -30,6 +31,7 @@ class AppTextField extends StatelessWidget {
     this.label,
     this.hint,
     this.errorText,
+    this.validator,
     this.keyboardType = TextInputType.text,
     this.textInputAction = TextInputAction.next,
     this.obscureText = false,
@@ -73,6 +75,7 @@ class AppTextField extends StatelessWidget {
           obscureText: obscureText,
           enabled: enabled,
           readOnly: readOnly,
+          validator: validator,
           onChanged: onChanged,
           onTap: onTap,
 

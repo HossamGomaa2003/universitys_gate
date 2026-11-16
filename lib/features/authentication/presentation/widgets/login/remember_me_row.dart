@@ -1,5 +1,6 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:universitys_gate/app/theme/app_colors.dart';
 import 'package:universitys_gate/app/theme/app_text_styles.dart';
 
@@ -39,13 +40,13 @@ class RememberMeRow extends StatelessWidget {
           mainAxisSize: MainAxisSize.min,
           children: [
             SizedBox(
-              width: 22,
-              height: 22,
+              width: 22.r,
+              height: 22.r,
               child: Checkbox(
                 value: value,
                 activeColor: primaryColor,
                 shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(4),
+                  borderRadius: BorderRadius.circular(4.r),
                 ),
                 side: BorderSide(
                   color: checkboxBorder,
@@ -57,7 +58,7 @@ class RememberMeRow extends StatelessWidget {
               ),
             ),
 
-            SizedBox(width: 8),
+            SizedBox(width: 8.w),
 
             GestureDetector(
               onTap: () => onChanged(!value),
@@ -67,7 +68,7 @@ class RememberMeRow extends StatelessWidget {
                         ? AppTextStyles.darkBodyMedium
                         : AppTextStyles.lightBodyMedium)
                     .copyWith(
-                  fontSize: 13.5,
+                  fontSize: 13.5.sp,
                   color: textDark,
                   fontWeight: FontWeight.w500,
                 ),
@@ -84,7 +85,7 @@ class RememberMeRow extends StatelessWidget {
                     ? AppTextStyles.darkBodyMedium
                     : AppTextStyles.lightBodyMedium)
                 .copyWith(
-              fontSize: 13.5,
+              fontSize: 13.5.sp,
               color: primaryColor,
               fontWeight: FontWeight.w500,
             ),

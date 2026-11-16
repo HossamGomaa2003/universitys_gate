@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../app/theme/app_colors.dart';
 import '../../app/theme/app_dimensions.dart';
@@ -30,7 +31,7 @@ class AppButton extends StatelessWidget {
     if (isOutlined) {
       return SizedBox(
         width: double.infinity,
-        height: AppDimensions.buttonHeight,
+        height: AppDimensions.buttonHeight.h,
         child: OutlinedButton(
           onPressed: isLoading ? null : onPressed,
           style: OutlinedButton.styleFrom(
@@ -41,7 +42,7 @@ class AppButton extends StatelessWidget {
             ),
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(
-                AppRadius.button,
+                AppRadius.button.r,
               ),
             ),
           ),
@@ -52,7 +53,7 @@ class AppButton extends StatelessWidget {
 
     return SizedBox(
       width: double.infinity,
-      height: AppDimensions.buttonHeight,
+      height: AppDimensions.buttonHeight.h,
       child: ElevatedButton(
         onPressed: isLoading ? null : onPressed,
         style: ElevatedButton.styleFrom(
@@ -61,7 +62,7 @@ class AppButton extends StatelessWidget {
           elevation: 0,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(
-              AppRadius.button,
+              AppRadius.button.r,
             ),
           ),
         ),
@@ -73,8 +74,8 @@ class AppButton extends StatelessWidget {
   Widget _buildChild({required Color primaryColor}) {
     if (isLoading) {
       return SizedBox(
-        width: 22,
-        height: 22,
+        width: 22.r,
+        height: 22.r,
         child: CircularProgressIndicator(
           strokeWidth: 2.5,
           color: primaryColor,
@@ -88,17 +89,17 @@ class AppButton extends StatelessWidget {
         children: [
           Text(
             text,
-            style: const TextStyle(
-              fontSize: 16,
+            style: TextStyle(
+              fontSize: 16.sp,
               fontWeight: FontWeight.w600,
             ),
           ),
-          const SizedBox(
-            width: AppDimensions.spacing8,
+          SizedBox(
+            width: AppDimensions.spacing8.w,
           ),
           Icon(
             suffixIcon,
-            size: AppDimensions.iconMedium,
+            size: AppDimensions.iconMedium.r,
           ),
         ],
       );
@@ -110,15 +111,15 @@ class AppButton extends StatelessWidget {
         children: [
           Icon(
             icon,
-            size: AppDimensions.iconMedium,
+            size: AppDimensions.iconMedium.r,
           ),
-          const SizedBox(
-            width: AppDimensions.spacing8,
+          SizedBox(
+            width: AppDimensions.spacing8.w,
           ),
           Text(
             text,
-            style: const TextStyle(
-              fontSize: 16,
+            style: TextStyle(
+              fontSize: 16.sp,
               fontWeight: FontWeight.w600,
             ),
           ),
@@ -128,8 +129,8 @@ class AppButton extends StatelessWidget {
 
     return Text(
       text,
-      style: const TextStyle(
-        fontSize: 16,
+      style: TextStyle(
+        fontSize: 16.sp,
         fontWeight: FontWeight.w600,
       ),
     );

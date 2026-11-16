@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:universitys_gate/app/theme/app_colors.dart';
 import 'package:universitys_gate/app/theme/app_radius.dart';
 
@@ -33,14 +34,14 @@ class SocialLoginButtons extends StatelessWidget {
             borderColor: border,
             icon: Image.asset(
               'assets/icons/google.webp',
-              width: 24,
-              height: 24,
+              width: 24.r,
+              height: 24.r,
             ),
             onTap: onGoogleTap,
           ),
         ),
 
-        SizedBox(width: 12),
+        SizedBox(width: 12.w),
 
         Expanded(
           child: _SocialLoginButton(
@@ -48,8 +49,8 @@ class SocialLoginButtons extends StatelessWidget {
             borderColor: border,
             icon: Image.asset(
               'assets/icons/apple.png',
-              width: 24,
-              height: 24,
+              width: 24.r,
+              height: 24.r,
               color: isDark ? Colors.white : null,
             ),
             onTap: onAppleTap,
@@ -80,17 +81,17 @@ class _SocialLoginButton extends StatelessWidget {
       child: InkWell(
         onTap: onTap,
         borderRadius: BorderRadius.circular(
-          AppRadius.radius12,
+          AppRadius.radius12.r,
         ),
         child: Container(
-          height: 48,
+          height: 48.h,
           decoration: BoxDecoration(
             border: Border.all(
               color: borderColor,
               width: 1,
             ),
             borderRadius: BorderRadius.circular(
-              AppRadius.radius12,
+              AppRadius.radius12.r,
             ),
             color: backgroundColor,
           ),

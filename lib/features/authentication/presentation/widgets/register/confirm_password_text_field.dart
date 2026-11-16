@@ -1,15 +1,18 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:universitys_gate/core/utils/validators.dart';
 import 'package:universitys_gate/core/widgets/app_text_field.dart';
 
-class PasswordTextField extends StatelessWidget {
+class ConfirmPasswordTextField extends StatelessWidget {
   final TextEditingController controller;
+  final TextEditingController originalPasswordController;
   final bool obscureText;
   final VoidCallback onToggleVisibility;
 
-  const PasswordTextField({
+  const ConfirmPasswordTextField({
     super.key,
     required this.controller,
+    required this.originalPasswordController,
     required this.obscureText,
     required this.onToggleVisibility,
   });
@@ -18,14 +21,18 @@ class PasswordTextField extends StatelessWidget {
   Widget build(BuildContext context) {
     return AppTextField(
       controller: controller,
-      hint: 'auth.password'.tr(),
+      hint: 'auth.confirm_password'.tr(),
       prefixIcon: Icons.lock_outline_rounded,
+      obscureText: obscureText,
       suffixIcon: obscureText
           ? Icons.visibility_off_outlined
           : Icons.visibility_outlined,
       onSuffixIconPressed: onToggleVisibility,
-      obscureText: obscureText,
       textInputAction: TextInputAction.done,
+      validator: (val) => Validators.validateConfirmPassword(
+        val,
+        originalPasswordController.text,
+      ),
     );
   }
 }

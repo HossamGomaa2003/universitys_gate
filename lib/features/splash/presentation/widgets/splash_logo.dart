@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class SplashLogo extends StatelessWidget {
   final Animation<double> scaleAnimation;
@@ -18,8 +19,8 @@ class SplashLogo extends StatelessWidget {
         scale: scaleAnimation,
         child: Image.asset(
           'assets/images/logo.png',
-          width: 150,
-          height: 150,
+          width: 150.r,
+          height: 150.r,
           fit: BoxFit.contain,
         ),
       ),

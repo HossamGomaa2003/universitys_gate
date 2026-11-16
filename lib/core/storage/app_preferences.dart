@@ -7,6 +7,8 @@ class AppPreferences {
   static const String _languageKey = 'language_code';
   static const String _setupCompleteKey = 'is_setup_complete';
 
+  static const String _profileImageKey = 'profile_image_path';
+
   final SharedPreferences _preferences;
 
   AppPreferences(this._preferences);
@@ -21,6 +23,10 @@ class AppPreferences {
 
   bool get isSetupComplete {
     return _preferences.getBool(_setupCompleteKey) ?? false;
+  }
+
+  String? get profileImagePath {
+    return _preferences.getString(_profileImageKey);
   }
 
   Future<void> saveLanguage(String languageCode) async {
@@ -39,5 +45,9 @@ class AppPreferences {
 
   Future<void> setSetupComplete(bool complete) async {
     await _preferences.setBool(_setupCompleteKey, complete);
+  }
+
+  Future<void> saveProfileImagePath(String path) async {
+    await _preferences.setString(_profileImageKey, path);
   }
 }

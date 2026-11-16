@@ -1,5 +1,6 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:universitys_gate/core/utils/validators.dart';
 import 'package:universitys_gate/core/widgets/app_text_field.dart';
 
 class EmailTextField extends StatelessWidget {
@@ -18,6 +19,7 @@ class EmailTextField extends StatelessWidget {
       prefixIcon: Icons.email_outlined,
       keyboardType: TextInputType.emailAddress,
       textInputAction: TextInputAction.next,
+      validator: Validators.validateEmail,
     );
   }
 }

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../app/theme/app_colors.dart';
 
@@ -38,23 +39,23 @@ class SplashTitle extends StatelessWidget {
                 ],
               ),
               style: TextStyle(
-                fontSize: 36,
+                fontSize: 36.sp,
                 fontWeight: FontWeight.w800,
                 letterSpacing: -1,
               ),
             ),
 
-            SizedBox(height: 10),
+            SizedBox(height: 10.h),
 
             Padding(
               padding: EdgeInsets.symmetric(
-                horizontal: 24,
+                horizontal: 24.w,
               ),
               child: Text(
                 'Your Path to a Brighter Future',
                 textAlign: TextAlign.center,
                 style: TextStyle(
-                  fontSize: 14,
+                  fontSize: 14.sp,
                   color: AppColors.textSecondary,
                   fontWeight: FontWeight.w500,
                 ),

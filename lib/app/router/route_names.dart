@@ -14,4 +14,16 @@ abstract class RouteNames {
 
   /// Login Screen
   static const String login = '/login';
+
+  /// Register Screen
+  static const String register = '/register';
+
+  /// Forgot Password Screen
+  static const String forgotPassword = '/forgot-password';
+
+  /// Verify OTP Screen
+  static const String verifyOtp = '/verify-otp';
+
+  /// Reset Password Screen
+  static const String resetPassword = '/reset-password';
 }

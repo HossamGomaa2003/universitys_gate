@@ -23,8 +23,16 @@ import 'package:universitys_gate/core/services/storage_service.dart' as _i219;
 import 'package:universitys_gate/core/storage/app_preferences.dart' as _i855;
 import 'package:universitys_gate/features/app_setup/logic/app_setup_cubit.dart'
     as _i724;
+import 'package:universitys_gate/features/authentication/cubit/forgot_password/forgot_password_cubit.dart'
+    as _i1049;
 import 'package:universitys_gate/features/authentication/cubit/login/login_cubit.dart'
     as _i1047;
+import 'package:universitys_gate/features/authentication/cubit/register/register_cubit.dart'
+    as _i1048;
+import 'package:universitys_gate/features/authentication/cubit/reset_password/reset_password_cubit.dart'
+    as _i1051;
+import 'package:universitys_gate/features/authentication/cubit/verify_otp/verify_otp_cubit.dart'
+    as _i1050;
 import 'package:universitys_gate/features/authentication/data/repositories/auth_repository.dart'
     as _i358;
 import 'package:universitys_gate/features/onboarding/cubit/onboarding_cubit.dart'
@@ -51,7 +59,9 @@ extension GetItInjectableX on _i174.GetIt {
     gh.lazySingleton<_i855.AppPreferences>(
       () => _i855.AppPreferences(gh<_i460.SharedPreferences>()),
     );
-    gh.lazySingleton<_i358.AuthRepository>(() => _i358.AuthRepositoryImpl());
+    gh.lazySingleton<_i358.AuthRepository>(
+      () => _i358.AuthRepositoryImpl(gh<_i694.DioClient>()),
+    );
     gh.factory<_i724.AppSetupCubit>(
       () => _i724.AppSetupCubit(gh<_i855.AppPreferences>()),
     );
@@ -63,6 +73,18 @@ extension GetItInjectableX on _i174.GetIt {
     );
     gh.factory<_i1047.LoginCubit>(
       () => _i1047.LoginCubit(gh<_i358.AuthRepository>()),
+    );
+    gh.factory<_i1048.RegisterCubit>(
+      () => _i1048.RegisterCubit(gh<_i358.AuthRepository>()),
+    );
+    gh.factory<_i1049.ForgotPasswordCubit>(
+      () => _i1049.ForgotPasswordCubit(gh<_i358.AuthRepository>()),
+    );
+    gh.factory<_i1050.VerifyOtpCubit>(
+      () => _i1050.VerifyOtpCubit(gh<_i358.AuthRepository>()),
+    );
+    gh.factory<_i1051.ResetPasswordCubit>(
+      () => _i1051.ResetPasswordCubit(gh<_i358.AuthRepository>()),
     );
 
     return this;
