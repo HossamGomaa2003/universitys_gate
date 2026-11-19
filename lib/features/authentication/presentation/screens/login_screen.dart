@@ -76,6 +76,11 @@ class _LoginScreenContentState extends State<_LoginScreenContent> {
                 backgroundColor: Colors.green,
               ),
             );
+            Navigator.pushNamedAndRemoveUntil(
+              context,
+              RouteNames.mainShell,
+                  (route) => false,
+            );
           } else if (state is LoginFailure) {
             ScaffoldMessenger.of(context).showSnackBar(
               SnackBar(

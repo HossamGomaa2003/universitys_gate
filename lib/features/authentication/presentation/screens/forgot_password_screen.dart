@@ -2,6 +2,7 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:hugeicons/hugeicons.dart';
 import 'package:universitys_gate/app/router/route_names.dart';
 import 'package:universitys_gate/app/theme/app_colors.dart';
 import 'package:universitys_gate/app/theme/app_dimensions.dart';
@@ -50,8 +51,8 @@ class _ForgotPasswordScreenContentState
   void _onSendCode(BuildContext context) {
     if (_formKey.currentState?.validate() ?? false) {
       context.read<ForgotPasswordCubit>().sendOtp(
-            email: _emailController.text,
-          );
+        email: _emailController.text,
+      );
     }
   }
 
@@ -59,8 +60,9 @@ class _ForgotPasswordScreenContentState
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final backgroundColor =
-        isDark ? DarkAppColors.background : AppColors.background;
+    isDark ? DarkAppColors.background : AppColors.background;
     final cardBg = isDark ? DarkAppColors.cardBackground : AppColors.surface;
+    final primaryColor = isDark ? DarkAppColors.primary : AppColors.primary;
 
     return Scaffold(
       backgroundColor: backgroundColor,
@@ -68,9 +70,10 @@ class _ForgotPasswordScreenContentState
         backgroundColor: Colors.transparent,
         elevation: 0,
         leading: IconButton(
-          icon: Icon(
-            Icons.arrow_back_ios_new_rounded,
+          icon: HugeIcon(
+            icon: HugeIcons.strokeRoundedArrowLeft01,
             color: isDark ? DarkAppColors.textPrimary : AppColors.textPrimary,
+            size: 22.r,
           ),
           onPressed: () => Navigator.pop(context),
         ),
@@ -111,7 +114,7 @@ class _ForgotPasswordScreenContentState
                             ? Colors.black.withValues(alpha: 0.2)
                             : AppColors.primaryDark.withValues(alpha: 0.05),
                         blurRadius: 20.r,
-                        offset: Offset(0, 4),
+                        offset: const Offset(0, 4),
                       ),
                     ],
                   ),
@@ -123,18 +126,15 @@ class _ForgotPasswordScreenContentState
                           width: 72.r,
                           height: 72.r,
                           decoration: BoxDecoration(
-                            color: (isDark
-                                    ? DarkAppColors.primary
-                                    : AppColors.primary)
-                                .withValues(alpha: 0.1),
+                            color: primaryColor.withValues(alpha: 0.1),
                             shape: BoxShape.circle,
                           ),
-                          child: Icon(
-                            Icons.lock_reset_rounded,
-                            size: 36.r,
-                            color: isDark
-                                ? DarkAppColors.primary
-                                : AppColors.primary,
+                          child: Center(
+                            child: HugeIcon(
+                              icon: HugeIcons.strokeRoundedLockPassword,
+                              size: 36.r,
+                              color: primaryColor,
+                            ),
                           ),
                         ),
                       ),
@@ -142,30 +142,30 @@ class _ForgotPasswordScreenContentState
                       Text(
                         'auth.forgot_password_title'.tr(),
                         style: (isDark
-                                ? AppTextStyles.darkHeadlineLarge
-                                : AppTextStyles.lightHeadlineLarge)
+                            ? AppTextStyles.darkHeadlineLarge
+                            : AppTextStyles.lightHeadlineLarge)
                             .copyWith(fontSize: 24.sp),
                       ),
                       SizedBox(height: AppDimensions.spacing8.h),
                       Text(
                         'auth.forgot_password_subtitle'.tr(),
                         style: (isDark
-                                ? AppTextStyles.darkBodyMedium
-                                : AppTextStyles.lightBodyMedium)
+                            ? AppTextStyles.darkBodyMedium
+                            : AppTextStyles.lightBodyMedium)
                             .copyWith(fontSize: 14.sp),
                       ),
                       SizedBox(height: AppDimensions.spacing24.h),
                       AppTextField(
                         controller: _emailController,
                         hint: 'auth.email_address'.tr(),
-                        prefixIcon: Icons.email_outlined,
+                        hugePrefixIcon: HugeIcons.strokeRoundedMail01,
                         keyboardType: TextInputType.emailAddress,
                         validator: Validators.validateEmail,
                       ),
                       SizedBox(height: AppDimensions.spacing24.h),
                       AppButton(
                         text: 'auth.send_code'.tr(),
-                        suffixIcon: Icons.arrow_forward_rounded,
+                        hugeSuffixIcon: HugeIcons.strokeRoundedArrowRight01,
                         isLoading: isLoading,
                         onPressed: () => _onSendCode(context),
                       ),

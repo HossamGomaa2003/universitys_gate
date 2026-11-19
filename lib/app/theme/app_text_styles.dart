@@ -1,131 +1,131 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'app_colors.dart';
 
 class AppTextStyles {
   // =========================
-  // Light Mode
+  // Light Mode (Cairo Font)
   // =========================
 
-  static const TextStyle lightDisplayLarge = TextStyle(
+  static TextStyle lightDisplayLarge = GoogleFonts.cairo(
     fontSize: 32,
     fontWeight: FontWeight.bold,
     color: AppColors.textPrimary,
   );
 
-  static const TextStyle lightDisplayMedium = TextStyle(
+  static TextStyle lightDisplayMedium = GoogleFonts.cairo(
     fontSize: 28,
     fontWeight: FontWeight.bold,
     color: AppColors.textPrimary,
   );
 
-  static const TextStyle lightHeadlineLarge = TextStyle(
+  static TextStyle lightHeadlineLarge = GoogleFonts.cairo(
     fontSize: 24,
     fontWeight: FontWeight.bold,
     color: AppColors.textPrimary,
   );
 
-  static const TextStyle lightHeadlineMedium = TextStyle(
+  static TextStyle lightHeadlineMedium = GoogleFonts.cairo(
     fontSize: 20,
     fontWeight: FontWeight.w700,
     color: AppColors.textPrimary,
   );
 
-  static const TextStyle lightTitleLarge = TextStyle(
+  static TextStyle lightTitleLarge = GoogleFonts.cairo(
     fontSize: 18,
     fontWeight: FontWeight.w600,
     color: AppColors.textPrimary,
   );
 
-  static const TextStyle lightTitleMedium = TextStyle(
+  static TextStyle lightTitleMedium = GoogleFonts.cairo(
     fontSize: 16,
     fontWeight: FontWeight.w600,
     color: AppColors.textPrimary,
   );
 
-  static const TextStyle lightBodyLarge = TextStyle(
+  static TextStyle lightBodyLarge = GoogleFonts.cairo(
     fontSize: 16,
     fontWeight: FontWeight.w400,
     color: AppColors.textPrimary,
   );
 
-  static const TextStyle lightBodyMedium = TextStyle(
+  static TextStyle lightBodyMedium = GoogleFonts.cairo(
     fontSize: 14,
     fontWeight: FontWeight.w400,
     color: AppColors.textSecondary,
   );
 
-  static const TextStyle lightBodySmall = TextStyle(
+  static TextStyle lightBodySmall = GoogleFonts.cairo(
     fontSize: 12,
     fontWeight: FontWeight.w400,
     color: AppColors.textSecondary,
   );
 
-  static const TextStyle lightButton = TextStyle(
+  static TextStyle lightButton = GoogleFonts.cairo(
     fontSize: 16,
     fontWeight: FontWeight.w600,
     color: Colors.white,
   );
 
   // =========================
-  // Dark Mode
+  // Dark Mode (Cairo Font)
   // =========================
 
-  static const TextStyle darkDisplayLarge = TextStyle(
+  static TextStyle darkDisplayLarge = GoogleFonts.cairo(
     fontSize: 32,
     fontWeight: FontWeight.bold,
     color: DarkAppColors.textPrimary,
   );
 
-  static const TextStyle darkDisplayMedium = TextStyle(
+  static TextStyle darkDisplayMedium = GoogleFonts.cairo(
     fontSize: 28,
     fontWeight: FontWeight.bold,
     color: DarkAppColors.textPrimary,
   );
 
-  static const TextStyle darkHeadlineLarge = TextStyle(
+  static TextStyle darkHeadlineLarge = GoogleFonts.cairo(
     fontSize: 24,
     fontWeight: FontWeight.bold,
     color: DarkAppColors.textPrimary,
   );
 
-  static const TextStyle darkHeadlineMedium = TextStyle(
+  static TextStyle darkHeadlineMedium = GoogleFonts.cairo(
     fontSize: 20,
     fontWeight: FontWeight.w700,
     color: DarkAppColors.textPrimary,
   );
 
-  static const TextStyle darkTitleLarge = TextStyle(
+  static TextStyle darkTitleLarge = GoogleFonts.cairo(
     fontSize: 18,
     fontWeight: FontWeight.w600,
     color: DarkAppColors.textPrimary,
   );
 
-  static const TextStyle darkTitleMedium = TextStyle(
+  static TextStyle darkTitleMedium = GoogleFonts.cairo(
     fontSize: 16,
     fontWeight: FontWeight.w600,
     color: DarkAppColors.textPrimary,
   );
 
-  static const TextStyle darkBodyLarge = TextStyle(
+  static TextStyle darkBodyLarge = GoogleFonts.cairo(
     fontSize: 16,
     fontWeight: FontWeight.w400,
     color: DarkAppColors.textPrimary,
   );
 
-  static const TextStyle darkBodyMedium = TextStyle(
+  static TextStyle darkBodyMedium = GoogleFonts.cairo(
     fontSize: 14,
     fontWeight: FontWeight.w400,
     color: DarkAppColors.textSecondary,
   );
 
-  static const TextStyle darkBodySmall = TextStyle(
+  static TextStyle darkBodySmall = GoogleFonts.cairo(
     fontSize: 12,
     fontWeight: FontWeight.w400,
     color: DarkAppColors.textSecondary,
   );
 
-  static const TextStyle darkButton = TextStyle(
+  static TextStyle darkButton = GoogleFonts.cairo(
     fontSize: 16,
     fontWeight: FontWeight.w600,
     color: Colors.white,

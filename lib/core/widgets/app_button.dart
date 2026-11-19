@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:hugeicons/hugeicons.dart';
 
 import '../../app/theme/app_colors.dart';
 import '../../app/theme/app_dimensions.dart';
@@ -12,6 +13,8 @@ class AppButton extends StatelessWidget {
   final bool isOutlined;
   final IconData? icon;
   final IconData? suffixIcon;
+  final List<List<dynamic>>? hugeIcon;
+  final List<List<dynamic>>? hugeSuffixIcon;
 
   const AppButton({
     super.key,
@@ -21,6 +24,8 @@ class AppButton extends StatelessWidget {
     this.isOutlined = false,
     this.icon,
     this.suffixIcon,
+    this.hugeIcon,
+    this.hugeSuffixIcon,
   });
 
   @override
@@ -41,9 +46,7 @@ class AppButton extends StatelessWidget {
               width: 1.5,
             ),
             shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(
-                AppRadius.button.r,
-              ),
+              borderRadius: BorderRadius.circular(AppRadius.button.r),
             ),
           ),
           child: _buildChild(primaryColor: primaryColor),
@@ -61,9 +64,7 @@ class AppButton extends StatelessWidget {
           foregroundColor: Colors.white,
           elevation: 0,
           shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(
-              AppRadius.button.r,
-            ),
+            borderRadius: BorderRadius.circular(AppRadius.button.r),
           ),
         ),
         child: _buildChild(primaryColor: Colors.white),
@@ -83,7 +84,7 @@ class AppButton extends StatelessWidget {
       );
     }
 
-    if (suffixIcon != null) {
+    if (hugeSuffixIcon != null || suffixIcon != null) {
       return Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
@@ -94,28 +95,38 @@ class AppButton extends StatelessWidget {
               fontWeight: FontWeight.w600,
             ),
           ),
-          SizedBox(
-            width: AppDimensions.spacing8.w,
-          ),
-          Icon(
-            suffixIcon,
-            size: AppDimensions.iconMedium.r,
-          ),
+          SizedBox(width: AppDimensions.spacing8.w),
+          if (hugeSuffixIcon != null)
+            HugeIcon(
+              icon: hugeSuffixIcon!,
+              size: AppDimensions.iconMedium.r,
+              color: primaryColor,
+            )
+          else
+            Icon(
+              suffixIcon,
+              size: AppDimensions.iconMedium.r,
+            ),
         ],
       );
     }
 
-    if (icon != null) {
+    if (hugeIcon != null || icon != null) {
       return Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Icon(
-            icon,
-            size: AppDimensions.iconMedium.r,
-          ),
-          SizedBox(
-            width: AppDimensions.spacing8.w,
-          ),
+          if (hugeIcon != null)
+            HugeIcon(
+              icon: hugeIcon!,
+              size: AppDimensions.iconMedium.r,
+              color: primaryColor,
+            )
+          else
+            Icon(
+              icon,
+              size: AppDimensions.iconMedium.r,
+            ),
+          SizedBox(width: AppDimensions.spacing8.w),
           Text(
             text,
             style: TextStyle(

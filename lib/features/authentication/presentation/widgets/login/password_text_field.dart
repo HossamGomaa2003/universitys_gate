@@ -1,5 +1,6 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:hugeicons/hugeicons.dart';
 import 'package:universitys_gate/core/utils/validators.dart';
 import 'package:universitys_gate/core/widgets/app_text_field.dart';
 
@@ -20,12 +21,12 @@ class PasswordTextField extends StatelessWidget {
     return AppTextField(
       controller: controller,
       hint: 'auth.password'.tr(),
-      prefixIcon: Icons.lock_outline_rounded,
-      suffixIcon: obscureText
-          ? Icons.visibility_off_outlined
-          : Icons.visibility_outlined,
-      onSuffixIconPressed: onToggleVisibility,
+      hugePrefixIcon: HugeIcons.strokeRoundedLockKey,
+      hugeSuffixIcon: obscureText
+          ? HugeIcons.strokeRoundedViewOffSlash
+          : HugeIcons.strokeRoundedView,
       obscureText: obscureText,
+      onSuffixIconPressed: onToggleVisibility,
       textInputAction: TextInputAction.done,
       validator: Validators.validatePassword,
     );

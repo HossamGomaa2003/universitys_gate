@@ -97,7 +97,11 @@ class _RegisterScreenContentState extends State<_RegisterScreenContent> {
                 backgroundColor: Colors.green,
               ),
             );
-            Navigator.pushReplacementNamed(context, RouteNames.login);
+            Navigator.pushNamedAndRemoveUntil(
+              context,
+              RouteNames.mainShell,
+                  (route) => false,
+            );
           } else if (state is RegisterFailure) {
             ScaffoldMessenger.of(context).showSnackBar(
               SnackBar(

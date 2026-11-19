@@ -1,5 +1,6 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:hugeicons/hugeicons.dart';
 import 'package:universitys_gate/core/utils/validators.dart';
 import 'package:universitys_gate/core/widgets/app_text_field.dart';
 
@@ -16,7 +17,7 @@ class NameTextField extends StatelessWidget {
     return AppTextField(
       controller: controller,
       hint: 'auth.full_name'.tr(),
-      prefixIcon: Icons.person_outline_rounded,
+      hugePrefixIcon: HugeIcons.strokeRoundedUser,
       keyboardType: TextInputType.name,
       textInputAction: TextInputAction.next,
       validator: Validators.validateName,

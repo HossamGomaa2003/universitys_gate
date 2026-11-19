@@ -90,5 +90,12 @@
     "network_error": "لا يوجد اتصال بالإنترنت",
     "cache_error": "خطأ في التخزين المحلي",
     "server_error": "حدث خطأ في الخادم، يرجى المحاولة لاحقاً"
+  },
+  "nav": {
+    "home": "الرئيسية",
+    "universities": "الجامعات",
+    "my_applications": "طلباتي",
+    "notifications": "الإشعارات",
+    "profile": "حسابي"
   }
 }

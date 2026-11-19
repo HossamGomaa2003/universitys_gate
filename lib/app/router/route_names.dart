@@ -26,4 +26,22 @@ abstract class RouteNames {
 
   /// Reset Password Screen
   static const String resetPassword = '/reset-password';
+
+  /// Main Shell Screen
+  static const String mainShell = '/main-shell';
+
+  /// Home Tab Screen
+  static const String home = '/home';
+
+  /// Universities Tab Screen
+  static const String universities = '/universities';
+
+  /// My Applications Tab Screen
+  static const String myApplications = '/my-applications';
+
+  /// Notifications Tab Screen
+  static const String notifications = '/notifications';
+
+  /// Profile Tab Screen
+  static const String profile = '/profile';
 }

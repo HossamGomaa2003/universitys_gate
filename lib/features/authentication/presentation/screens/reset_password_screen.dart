@@ -2,6 +2,7 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:hugeicons/hugeicons.dart';
 import 'package:universitys_gate/app/router/route_names.dart';
 import 'package:universitys_gate/app/theme/app_colors.dart';
 import 'package:universitys_gate/app/theme/app_dimensions.dart';
@@ -23,13 +24,13 @@ class ResetPasswordScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocProvider<ResetPasswordCubit>(
       create: (context) => getIt<ResetPasswordCubit>(),
-      child: _ResetPasswordScreenContent(),
+      child: const _ResetPasswordScreenContent(),
     );
   }
 }
 
 class _ResetPasswordScreenContent extends StatefulWidget {
-  _ResetPasswordScreenContent();
+  const _ResetPasswordScreenContent();
 
   @override
   State<_ResetPasswordScreenContent> createState() =>
@@ -55,11 +56,11 @@ class _ResetPasswordScreenContentState
   void _onSavePassword(BuildContext context, String email) {
     if (_formKey.currentState?.validate() ?? false) {
       context.read<ResetPasswordCubit>().resetPassword(
-            email: email,
-            otp: '1234',
-            newPassword: _passwordController.text,
-            confirmPassword: _confirmPasswordController.text,
-          );
+        email: email,
+        otp: '1234',
+        newPassword: _passwordController.text,
+        confirmPassword: _confirmPasswordController.text,
+      );
     }
   }
 
@@ -70,7 +71,7 @@ class _ResetPasswordScreenContentState
 
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final backgroundColor =
-        isDark ? DarkAppColors.background : AppColors.background;
+    isDark ? DarkAppColors.background : AppColors.background;
     final cardBg = isDark ? DarkAppColors.cardBackground : AppColors.surface;
     final primaryColor = isDark ? DarkAppColors.primary : AppColors.primary;
 
@@ -80,9 +81,10 @@ class _ResetPasswordScreenContentState
         backgroundColor: Colors.transparent,
         elevation: 0,
         leading: IconButton(
-          icon: Icon(
-            Icons.arrow_back_ios_new_rounded,
+          icon: HugeIcon(
+            icon: HugeIcons.strokeRoundedArrowLeft01,
             color: isDark ? DarkAppColors.textPrimary : AppColors.textPrimary,
+            size: 22.r,
           ),
           onPressed: () => Navigator.pop(context),
         ),
@@ -99,7 +101,7 @@ class _ResetPasswordScreenContentState
             Navigator.pushNamedAndRemoveUntil(
               context,
               RouteNames.login,
-              (route) => false,
+                  (route) => false,
             );
           } else if (state is ResetPasswordFailure) {
             ScaffoldMessenger.of(context).showSnackBar(
@@ -129,7 +131,7 @@ class _ResetPasswordScreenContentState
                             ? Colors.black.withValues(alpha: 0.2)
                             : AppColors.primaryDark.withValues(alpha: 0.05),
                         blurRadius: 20.r,
-                        offset: Offset(0, 4),
+                        offset: const Offset(0, 4),
                       ),
                     ],
                   ),
@@ -144,10 +146,12 @@ class _ResetPasswordScreenContentState
                             color: primaryColor.withValues(alpha: 0.1),
                             shape: BoxShape.circle,
                           ),
-                          child: Icon(
-                            Icons.key_rounded,
-                            size: 36.r,
-                            color: primaryColor,
+                          child: Center(
+                            child: HugeIcon(
+                              icon: HugeIcons.strokeRoundedKey01,
+                              size: 36.r,
+                              color: primaryColor,
+                            ),
                           ),
                         ),
                       ),
@@ -155,27 +159,27 @@ class _ResetPasswordScreenContentState
                       Text(
                         'auth.reset_password_title'.tr(),
                         style: (isDark
-                                ? AppTextStyles.darkHeadlineLarge
-                                : AppTextStyles.lightHeadlineLarge)
+                            ? AppTextStyles.darkHeadlineLarge
+                            : AppTextStyles.lightHeadlineLarge)
                             .copyWith(fontSize: 24.sp),
                       ),
                       SizedBox(height: AppDimensions.spacing8.h),
                       Text(
                         'auth.reset_password_subtitle'.tr(),
                         style: (isDark
-                                ? AppTextStyles.darkBodyMedium
-                                : AppTextStyles.lightBodyMedium)
+                            ? AppTextStyles.darkBodyMedium
+                            : AppTextStyles.lightBodyMedium)
                             .copyWith(fontSize: 14.sp),
                       ),
                       SizedBox(height: AppDimensions.spacing24.h),
                       AppTextField(
                         controller: _passwordController,
                         hint: 'auth.new_password'.tr(),
-                        prefixIcon: Icons.lock_outline_rounded,
+                        hugePrefixIcon: HugeIcons.strokeRoundedLockKey,
+                        hugeSuffixIcon: _obscurePassword
+                            ? HugeIcons.strokeRoundedViewOffSlash
+                            : HugeIcons.strokeRoundedView,
                         obscureText: _obscurePassword,
-                        suffixIcon: _obscurePassword
-                            ? Icons.visibility_off_outlined
-                            : Icons.visibility_outlined,
                         onSuffixIconPressed: () {
                           setState(() => _obscurePassword = !_obscurePassword);
                         },
@@ -185,15 +189,15 @@ class _ResetPasswordScreenContentState
                       AppTextField(
                         controller: _confirmPasswordController,
                         hint: 'auth.confirm_password'.tr(),
-                        prefixIcon: Icons.lock_outline_rounded,
+                        hugePrefixIcon: HugeIcons.strokeRoundedLockPassword,
+                        hugeSuffixIcon: _obscureConfirmPassword
+                            ? HugeIcons.strokeRoundedViewOffSlash
+                            : HugeIcons.strokeRoundedView,
                         obscureText: _obscureConfirmPassword,
-                        suffixIcon: _obscureConfirmPassword
-                            ? Icons.visibility_off_outlined
-                            : Icons.visibility_outlined,
                         onSuffixIconPressed: () {
                           setState(
-                            () => _obscureConfirmPassword =
-                                !_obscureConfirmPassword,
+                                () => _obscureConfirmPassword =
+                            !_obscureConfirmPassword,
                           );
                         },
                         validator: (val) => Validators.validateConfirmPassword(
@@ -204,6 +208,7 @@ class _ResetPasswordScreenContentState
                       SizedBox(height: AppDimensions.spacing24.h),
                       AppButton(
                         text: 'auth.save_password'.tr(),
+                        hugeSuffixIcon: HugeIcons.strokeRoundedArrowRight01,
                         isLoading: isLoading,
                         onPressed: () => _onSavePassword(context, emailArg),
                       ),

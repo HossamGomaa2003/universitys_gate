@@ -1,5 +1,6 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:hugeicons/hugeicons.dart';
 import 'package:universitys_gate/core/utils/validators.dart';
 import 'package:universitys_gate/core/widgets/app_text_field.dart';
 
@@ -22,11 +23,11 @@ class ConfirmPasswordTextField extends StatelessWidget {
     return AppTextField(
       controller: controller,
       hint: 'auth.confirm_password'.tr(),
-      prefixIcon: Icons.lock_outline_rounded,
+      hugePrefixIcon: HugeIcons.strokeRoundedLockPassword,
+      hugeSuffixIcon: obscureText
+          ? HugeIcons.strokeRoundedViewOffSlash
+          : HugeIcons.strokeRoundedView,
       obscureText: obscureText,
-      suffixIcon: obscureText
-          ? Icons.visibility_off_outlined
-          : Icons.visibility_outlined,
       onSuffixIconPressed: onToggleVisibility,
       textInputAction: TextInputAction.done,
       validator: (val) => Validators.validateConfirmPassword(

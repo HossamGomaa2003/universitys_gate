@@ -90,5 +90,12 @@
     "network_error": "No internet connection",
     "cache_error": "Local storage error",
     "server_error": "Server error, please try again later"
+  },
+  "nav": {
+    "home": "Home",
+    "universities": "Universities",
+    "my_applications": "My Applications",
+    "notifications": "Notifications",
+    "profile": "Profile"
   }
 }

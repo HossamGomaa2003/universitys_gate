@@ -1,6 +1,7 @@
 import 'package:easy_localization/easy_localization.dart' hide TextDirection;
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:hugeicons/hugeicons.dart';
 import 'package:universitys_gate/app/theme/app_colors.dart';
 import 'package:universitys_gate/app/theme/app_text_styles.dart';
 
@@ -32,7 +33,7 @@ class RegisterHeader extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            // Back button
+            // زر الرجوع
             Material(
               color: Colors.transparent,
               child: InkWell(
@@ -57,9 +58,9 @@ class RegisterHeader extends StatelessWidget {
                     ],
                   ),
                   child: Center(
-                    child: Icon(
-                      Icons.arrow_back_ios_new_rounded,
-                      size: 18.r,
+                    child: HugeIcon(
+                      icon: HugeIcons.strokeRoundedArrowLeft01,
+                      size: 20.r,
                       color: isDark ? DarkAppColors.textPrimary : AppColors.textPrimary,
                     ),
                   ),
@@ -69,7 +70,7 @@ class RegisterHeader extends StatelessWidget {
 
             SizedBox(height: 16.h),
 
-            // Logo & Tagline Column
+            // الشعار والتعريف
             SizedBox(
               width: screenWidth * 0.52,
               child: Column(
@@ -91,10 +92,12 @@ class RegisterHeader extends StatelessWidget {
                               color: primaryColor,
                               borderRadius: BorderRadius.circular(12.r),
                             ),
-                            child: Icon(
-                              Icons.school,
-                              color: Colors.white,
-                              size: 28.r,
+                            child: Center(
+                              child: HugeIcon(
+                                icon: HugeIcons.strokeRoundedUniversity,
+                                color: Colors.white,
+                                size: 26.r,
+                              ),
                             ),
                           );
                         },
@@ -105,8 +108,8 @@ class RegisterHeader extends StatelessWidget {
                             TextSpan(
                               text: 'Uni',
                               style: (isDark
-                                      ? AppTextStyles.darkDisplayMedium
-                                      : AppTextStyles.lightDisplayMedium)
+                                  ? AppTextStyles.darkDisplayMedium
+                                  : AppTextStyles.lightDisplayMedium)
                                   .copyWith(
                                 fontSize: 28.sp,
                                 letterSpacing: -0.5,
@@ -115,8 +118,8 @@ class RegisterHeader extends StatelessWidget {
                             TextSpan(
                               text: 'Gate',
                               style: (isDark
-                                      ? AppTextStyles.darkDisplayMedium
-                                      : AppTextStyles.lightDisplayMedium)
+                                  ? AppTextStyles.darkDisplayMedium
+                                  : AppTextStyles.lightDisplayMedium)
                                   .copyWith(
                                 fontSize: 28.sp,
                                 color: primaryColor,
@@ -132,8 +135,8 @@ class RegisterHeader extends StatelessWidget {
                   Text(
                     'auth.tagline'.tr(),
                     style: (isDark
-                            ? AppTextStyles.darkBodyMedium
-                            : AppTextStyles.lightBodyMedium)
+                        ? AppTextStyles.darkBodyMedium
+                        : AppTextStyles.lightBodyMedium)
                         .copyWith(
                       fontSize: 14.sp,
                       height: 1.3,

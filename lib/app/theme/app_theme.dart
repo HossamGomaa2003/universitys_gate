@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'app_colors.dart';
 
 class MyThemeData {
@@ -10,10 +11,10 @@ class MyThemeData {
 
   static ThemeData lightTheme = ThemeData(
     useMaterial3: true,
-
     brightness: Brightness.light,
-
     scaffoldBackgroundColor: AppColors.background,
+    fontFamily: GoogleFonts.cairo().fontFamily,
+    textTheme: GoogleFonts.cairoTextTheme(),
 
     colorScheme: const ColorScheme.light(
       primary: AppColors.primary,
@@ -36,7 +37,7 @@ class MyThemeData {
       centerTitle: true,
     ),
 
-    cardTheme: CardThemeData(
+    cardTheme: const CardThemeData(
       color: AppColors.surface,
       elevation: 0,
       margin: EdgeInsets.zero,
@@ -47,7 +48,7 @@ class MyThemeData {
       ),
     ),
 
-    inputDecorationTheme: InputDecorationTheme(
+    inputDecorationTheme: const InputDecorationTheme(
       filled: true,
       fillColor: AppColors.surface,
 
@@ -104,10 +105,10 @@ class MyThemeData {
 
   static ThemeData darkTheme = ThemeData(
     useMaterial3: true,
-
     brightness: Brightness.dark,
-
     scaffoldBackgroundColor: DarkAppColors.background,
+    fontFamily: GoogleFonts.cairo().fontFamily,
+    textTheme: GoogleFonts.cairoTextTheme(ThemeData.dark().textTheme),
 
     colorScheme: const ColorScheme.dark(
       primary: DarkAppColors.primary,
@@ -130,7 +131,7 @@ class MyThemeData {
       centerTitle: true,
     ),
 
-    cardTheme: CardThemeData(
+    cardTheme: const CardThemeData(
       color: DarkAppColors.surface,
       elevation: 0,
       margin: EdgeInsets.zero,
@@ -141,7 +142,7 @@ class MyThemeData {
       ),
     ),
 
-    inputDecorationTheme: InputDecorationTheme(
+    inputDecorationTheme: const InputDecorationTheme(
       filled: true,
       fillColor: DarkAppColors.surface,
 
