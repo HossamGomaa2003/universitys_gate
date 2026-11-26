@@ -22,6 +22,7 @@ dependencies:
   dio: ^5.8.0+1
   hugeicons: ^4.4.0
   google_fonts: ^8.2.1
+  carousel_slider: ^5.1.2
 
 dev_dependencies:
   flutter_test:

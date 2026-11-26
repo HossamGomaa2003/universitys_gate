@@ -13,6 +13,7 @@
   "theme_dark": "داكن",
   "theme_system": "تلقائي",
   "continue": "متابعة",
+
   "onboarding": {
     "title_1": "رحلتك الجامعية تبدأ من هنا",
     "description_1": "اكتشف أفضل الجامعات، وتعرّف على اختياراتك، وابدأ أولى خطواتك نحو مستقبلك.",
@@ -25,6 +26,7 @@
     "back": "السابق",
     "get_started": "ابدأ الآن"
   },
+
   "auth": {
     "login": "تسجيل الدخول",
     "welcome_back": "مرحباً بعودتك",
@@ -71,6 +73,7 @@
     "login_success": "تم تسجيل الدخول بنجاح!",
     "reset_password_success": "تم تغيير كلمة المرور بنجاح!"
   },
+
   "validation": {
     "name_required": "الرجاء إدخال الاسم الكامل",
     "name_too_short": "الاسم يجب أن يتكون من 3 أحرف على الأقل",
@@ -84,6 +87,7 @@
     "passwords_do_not_match": "كلمتا المرور غير متطابقتين",
     "otp_required": "الرجاء إدخال الرمز المكون من 4 أرقام"
   },
+
   "error": {
     "something_went_wrong": "حدث خطأ ما",
     "retry": "إعادة المحاولة",
@@ -91,11 +95,80 @@
     "cache_error": "خطأ في التخزين المحلي",
     "server_error": "حدث خطأ في الخادم، يرجى المحاولة لاحقاً"
   },
+
   "nav": {
     "home": "الرئيسية",
     "universities": "الجامعات",
     "my_applications": "طلباتي",
     "notifications": "الإشعارات",
     "profile": "حسابي"
+  },
+
+  "home": {
+    "welcome": "مرحباً بك، 👋",
+    "subtitle": "في بوابة الجامعة",
+    "search_hint": "ابحث عن جامعة أو تخصص...",
+
+    "quick_sections": "أقسام سريعة",
+    "view_all": "عرض الكل",
+
+    "all_services": "جميع الخدمات",
+    "all_services_subtitle": "اكتشف جميع الخدمات المتاحة وابدأ رحلتك الجامعية",
+
+    "service_application": "التقديم الجامعي",
+    "service_application_subtitle": "قدم طلب التحاق بجامعة بسهولة",
+
+    "service_universities": "الجامعات",
+    "service_universities_subtitle": "استعرض الجامعات المصرية وتعرف عليها",
+
+    "service_booking": "حجز موعد",
+    "service_booking_subtitle": "احجز موعدك لاستكمال إجراءات التقديم",
+
+    "service_fields": "التخصصات",
+    "service_fields_subtitle": "اكتشف الكليات والتخصصات المتاحة",
+
+    "service_tracking": "متابعة الطلبات",
+    "service_tracking_subtitle": "تابع حالة طلبات التقديم الخاصة بك",
+
+    "service_documents": "المستندات المطلوبة",
+    "service_documents_subtitle": "تعرف على الأوراق اللازمة للتقديم",
+
+    "apply": "التقديم",
+    "apply_subtitle": "قدم الآن",
+
+    "universities": "الجامعات",
+    "universities_subtitle": "استعرض الجامعات",
+
+    "deadlines": "المواعيد",
+    "deadlines_subtitle": "احجز موعدك",
+
+    "majors": "التخصصات",
+    "majors_subtitle": "اكتشف تخصصك",
+
+    "start_now": "ابدأ الآن",
+
+    "card1_title": "التقديم الإلكتروني",
+    "card1_subtitle": "في جميع الجامعات المصرية",
+    "card1_desc": "بكل سهولة .. ومن أي مكان",
+
+    "card2_title": "منح دراسية",
+    "card2_subtitle": "وفرص مميزة",
+    "card2_desc": "لتطبيق أحلامك الجامعية",
+    "card2_button": "اكتشف المنح",
+
+    "card3_title": "تعرف على",
+    "card3_subtitle": "الجامعات المصرية",
+    "card3_desc": "ومقارنة التخصصات",
+    "card3_button": "استعرض الجامعات",
+
+    "card4_title": "تابع حالة طلبك",
+    "card4_subtitle": "واستعد للخطوة القادمة",
+    "card4_button": "عرض الطلبات",
+
+    "recent_applications": "آخر طلباتك",
+    "under_review": "قيد المراجعة",
+    "cairo_university": "جامعة القاهرة",
+    "faculty_computers": "كلية الحاسبات والمعلومات",
+    "applied_date": "تم التقديم في: 15 أكتوبر 2025"
   }
 }

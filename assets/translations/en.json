@@ -13,6 +13,7 @@
   "theme_dark": "Dark",
   "theme_system": "System",
   "continue": "Continue",
+
   "onboarding": {
     "title_1": "Your University Journey Starts Here",
     "description_1": "Discover the best universities, explore your options and take the first step towards your future.",
@@ -25,6 +26,7 @@
     "back": "Back",
     "get_started": "Get Started"
   },
+
   "auth": {
     "login": "Login",
     "welcome_back": "Welcome Back",
@@ -71,6 +73,7 @@
     "login_success": "Logged in successfully!",
     "reset_password_success": "Password changed successfully!"
   },
+
   "validation": {
     "name_required": "Please enter your full name",
     "name_too_short": "Name must be at least 3 characters",
@@ -84,6 +87,7 @@
     "passwords_do_not_match": "Passwords do not match",
     "otp_required": "Please enter the 4-digit verification code"
   },
+
   "error": {
     "something_went_wrong": "Something went wrong",
     "retry": "Retry",
@@ -91,11 +95,80 @@
     "cache_error": "Local storage error",
     "server_error": "Server error, please try again later"
   },
+
   "nav": {
     "home": "Home",
     "universities": "Universities",
     "my_applications": "My Applications",
     "notifications": "Notifications",
     "profile": "Profile"
+  },
+
+  "home": {
+    "welcome": "Welcome, 👋",
+    "subtitle": "to University's Gate",
+    "search_hint": "Search for university or major...",
+
+    "quick_sections": "Quick Sections",
+    "view_all": "View All",
+
+    "all_services": "All Services",
+    "all_services_subtitle": "Explore all available services and start your university journey",
+
+    "service_application": "University Application",
+    "service_application_subtitle": "Apply to your preferred university easily",
+
+    "service_universities": "Universities",
+    "service_universities_subtitle": "Explore Egyptian universities",
+
+    "service_booking": "Book an Appointment",
+    "service_booking_subtitle": "Schedule your appointment to complete application procedures",
+
+    "service_fields": "Fields of Study",
+    "service_fields_subtitle": "Discover available faculties and majors",
+
+    "service_tracking": "Application Tracking",
+    "service_tracking_subtitle": "Track the status of your applications",
+
+    "service_documents": "Required Documents",
+    "service_documents_subtitle": "Check the documents needed for admission",
+
+    "apply": "Apply",
+    "apply_subtitle": "Apply Now",
+
+    "universities": "Universities",
+    "universities_subtitle": "Explore Universities",
+
+    "deadlines": "Deadlines",
+    "deadlines_subtitle": "Book Appointment",
+
+    "majors": "Majors",
+    "majors_subtitle": "Discover Major",
+
+    "start_now": "Apply Now",
+
+    "card1_title": "Online Application",
+    "card1_subtitle": "In All Egyptian Universities",
+    "card1_desc": "Easily .. From Anywhere",
+
+    "card2_title": "Scholarships",
+    "card2_subtitle": "& Unique Opportunities",
+    "card2_desc": "To achieve your university dreams",
+    "card2_button": "Explore Scholarships",
+
+    "card3_title": "Discover",
+    "card3_subtitle": "Egyptian Universities",
+    "card3_desc": "& Compare Majors",
+    "card3_button": "Explore Universities",
+
+    "card4_title": "Track Your Application",
+    "card4_subtitle": "Get Ready For Next Step",
+    "card4_button": "View Applications",
+
+    "recent_applications": "Recent Applications",
+    "under_review": "Under Review",
+    "cairo_university": "Cairo University",
+    "faculty_computers": "Faculty of Computers & Artificial Intelligence",
+    "applied_date": "Applied on: Oct 15, 2025"
   }
 }
